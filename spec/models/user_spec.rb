@@ -63,12 +63,12 @@ describe User do
     end
 
     describe "email address with mixed case" do
-        let(:mixed_case_email) { Foo@ExAMPle.CoM }
+        let(:mixed_case_email) { "Foo@ExAMPle.CoM" }
 
         it "should be saved as all lower-case" do
-            @yser.email = mixed_case_email
+            @user.email = mixed_case_email
             @user.save
-            expect(@user.reload.email).to eq mixed case email.downcase
+            expect(@user.reload.email).to eq mixed_case_email.downcase
         end
     end
 
